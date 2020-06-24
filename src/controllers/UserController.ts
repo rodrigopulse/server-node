@@ -3,8 +3,9 @@ import { Request, Response } from 'express'
 import User from '../schemas/User'
 
 class UserController {
-  public async index (req: Request, res: Response): Promise<Response> {
-    const users = await User.find()
+  public async id (req: Request, res: Response): Promise<Response> {
+    const id: string = req.path.split('/').pop()
+    const users = await User.find({ _id: id })
 
     return res.json(users)
   }

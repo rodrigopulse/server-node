@@ -4,7 +4,7 @@ import UserController from './controllers/UserController'
 
 const routes = Router()
 
-routes.get('/users', UserController.index)
+routes.get('/users/:id', UserController.id)
 routes.post('/users', UserController.create)
 
 export default routes

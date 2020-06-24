@@ -2,14 +2,17 @@ import { Schema, Document, model } from 'mongoose'
 
 interface UserInterface extends Document {
   email?: string
-  nome?: string,
+  firstName?: string,
+  lastName?: string,
+  password?: string,
   fullName(): string
 }
 
 const UserSchema = new Schema({
   email: String,
   firstName: String,
-  lastName: String
+  lastName: String,
+  password: String
 }, {
   timestamps: true
 })
