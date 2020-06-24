@@ -1,5 +1,4 @@
 import express from 'express'
-import cors from 'cors'
 import mongoose from 'mongoose'
 
 import dotenv from 'dotenv'
@@ -19,10 +18,9 @@ class App {
 
   private middlewares ():void {
     this.express.use(express.json())
-    this.express.use(cors())
   }
 
-  private database ():void{
+  private database ():void {
     const user = process.env.DB_USER
     const password = process.env.DB_PASSWORD
     const host = process.env.DB_HOST
@@ -32,7 +30,7 @@ class App {
     })
   }
 
-  private routes ():void{
+  private routes ():void {
     this.express.use(routes)
   }
 }
